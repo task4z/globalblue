@@ -1,27 +1,29 @@
-# Gb
+# Global Blue challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
+## Challenge 
+As a web portal user, I would like to calculate Net, Gross, VAT amounts for purchases in Austria so that I can use correctly calculated data.
 
-## Development server
+## Acceptance criteria
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- If user inputs one of the net, gross or VAT amounts and additionally a valid Austrian
+VAT rate (10%, 13%, 20%), the other two missing amounts (net/gross/VAT) are
+calculated by the system and shown
 
-## Code scaffolding
+- The system provides an error with meaningful error messages, in case of:
+o missing or invalid (0 or non-numeric) amount input, more than one input
+o missing or invalid (0 or non-numeric) VAT input
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Web interface must be responsive and needs to work on all standard desktop
+resolutions – supported browsers are Mozilla, Chrome, Edge (no mobile or tablet
+support)
+## Solution
 
-## Build
+To solve this challenge I decided to use reactive forms. Thinking of it now the choice was not the best because with template driven forms would be much easier to do the challenge.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Result
 
-## Running unit tests
+The final result looks like this:
+![result](./src/assets/result.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The unit tests are the following:
+![tests](./src/assets/tests.png)
